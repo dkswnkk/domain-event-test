@@ -26,7 +26,11 @@ public class UserService {
 
         user.changeName(name);
 
-//        userRepository.save(user); // AbstractAggregateRoot s#registerEvent() will be called here
+        /**
+         * https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/domain/AbstractAggregateRoot.html
+         * save() 또는 delete()를 호출해야만 이벤트가 발행됨.
+         */
+//        userRepository.save(user);
     }
 
 }
